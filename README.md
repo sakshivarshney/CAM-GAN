@@ -1,3 +1,5 @@
 # CAM-GAN
 
-Code will be available soon
+Run python train.py PATH TO CONFIG
+
+
