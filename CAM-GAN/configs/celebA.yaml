@@ -1,0 +1,33 @@
+data:
+  type: image
+  train_dir: /raid/sakshi/datasets/celebA/
+  test_dir: /raid/sakshi/datasets/celebA/
+  img_size: 256
+generator:
+  name: resnet4_adapter
+  kwargs:
+    nfilter: 64
+    embed_size: 1
+discriminator:
+  name: resnet4_adapter
+  kwargs:
+    nfilter: 64
+    embed_size: 1
+z_dist:
+  type: gauss
+  dim: 256
+training:
+  out_dir: /raid/sakshi/output_filter(64_32_16)/celebA
+  batch_size: 16
+test:
+  # model_file: https://s3.eu-central-1.amazonaws.com/avg-projects/gan_stability/models/celeba-ab478c9d.pt
+  batch_size: 32
+  sample_size: 64 
+  sample_nrow: 8
+interpolations:
+  nzs: 10
+  nsubsteps: 75
+
+
+# false_list=[[1,2,3,4,5,6,17,18,19,20,31,32,33,34,46,47,48,49,61,62,63,64,
+#                            76,77,78,79,91,92,93,94]]
